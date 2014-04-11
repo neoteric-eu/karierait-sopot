@@ -1,0 +1,58 @@
+<div class="container-fluid">
+	<div class="row-fluid" ng-controller="RegisterController">
+
+		<div class="row-fluid">
+			<div class="login-box relative">
+                <div id="lang-switch">
+                    <a href="javascript:void(0)" ng-class="{'current': lang == 'pl'}" ng-click="switchLang('pl')">pl</a> | <a href="javascript:void(0)" ng-class="{'current': lang == 'en'}" ng-click="switchLang('en')">en</a>
+                </div>
+				<h2>{{t('Register')}}</h2>
+				<form class="form-horizontal" name="registerForm" ng-submit="register()">
+					<fieldset>
+						<div class="input-prepend" title="{{t('Email')}}">
+							<span class="add-on"><i class="icon-user"></i></span>
+							<input class="input-large span10" ng-model="user.email" name="username" id="username" type="text" ng-disabled="user.paymentLogin" placeholder="{{t('Email')}}" autofocus required>
+						</div>
+						<div class="clearfix"></div>
+
+						<div class="input-prepend" title="{{t('Password')}}">
+							<span class="add-on"><i class="icon-lock"></i></span>
+							<input class="input-large span10" ng-model="user.password" name="password" id="password" type="password" placeholder="{{t('Password')}}" required/>
+						</div>
+
+                        <div class="input-prepend" title="{{t('Repeat_password')}}">
+							<span class="add-on"><i class="icon-lock"></i></span>
+							<input class="input-large span10" ng-model="user.repeatPassword" name="repeatPassword" id="repeatPassword" type="password" placeholder="{{t('Repeat_password')}}" required/>
+						</div>
+
+                        <p class="alert alert-error" ng-show="formError">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            {{t('Invalid_data')}}
+                        </p>
+
+                        <p class="alert alert-error" ng-show="formPasswordsError">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            {{t('Invalid_passwords')}}
+                        </p>
+
+                        <p class="alert alert-success" ng-show="registerSuccess">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            {{t('Register_success_msg')}}
+                        </p>
+
+						<div class="clearfix"></div>
+
+						<div class="button-login">
+							<button ng-disabled="isRegisterDisabled()" type="submit" class="btn btn-primary"><i class="icon-off icon-white"></i> {{t('Register')}}</button>
+						</div>
+                        <div class="clearfix"></div>
+				</form>
+				<hr/>
+                <h3>{{t('Have_account_yet')}} <a class="btn-link" href="#/login">{{t('Make_login')}}</a></h3>
+
+			</div><!--/span-->
+		</div><!--/row-->
+
+    </div><!--/fluid-row-->
+
+</div><!--/.fluid-container-->

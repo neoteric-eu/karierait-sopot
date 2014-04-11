@@ -1,0 +1,215 @@
+@import "variables.less";
+
+
+
+.bar {
+	/* Loading spinner
+	 * http://tympanus.net/codrops/2012/11/14/creative-css-loading-animations/
+	 * ---------------------------------------------------------------------- */
+	font-size: 20px; /* 1em */
+	width: 10em;
+	height: 1em;
+	position: relative;
+	margin: 40vh auto;
+
+	/* Styles */
+	border-radius: .5em; /* Height/2 */
+	background: white; /* Fallback */
+	background: rgba(255,255,255,0.6);
+	box-shadow:
+		0 0 0 .05em rgba(100,100,100,0.075), /* Subtle border */
+		0 0 0 .25em rgba(0,0,0,0.1),           /* Outter border */
+		inset 0 .1em .05em rgba(0,0,0,0.1),   /* Inset shadow */
+		0 .05em rgba(255,255,255,0.7);     /* Slight reflection */
+
+	.text {
+		/* Content and position */
+		position: absolute;
+		left: 15%;
+		top: 150%;
+		/* Font styles */
+		font-family: 'Carrois Gothic', sans-serif;
+		font-size: 1em;
+		color: #555;
+		text-shadow: 0 .05em rgba(255,255,255,0.7);
+	}
+}
+
+.sphere {
+	/* Size */
+	display: block;
+	width: 1em;
+	height: 100%;
+
+	/* Styles */
+	border-radius: 50%;
+	background: linear-gradient(#eee, #ddd);
+	box-shadow:
+		inset 0 .15em .1em rgba(255,255,255,0.3), /* Top light */
+		inset 0 -.1em .15em rgba(0,0,0,0.15),      /* Bottom shadow */
+		0 0 .25em rgba(0,0,0,0.3);             /* Outter shadow */
+
+	/* Animation */
+	-webkit-animation: slide 1.75s ease-in-out infinite alternate;
+	-moz-animation: slide 1.75s ease-in-out infinite alternate;
+	-ms-animation: slide 1.75s ease-in-out infinite alternate;
+	-o-animation: slide 1.75s ease-in-out infinite alternate;
+	animation: slide 1.75s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes slide {
+	to { margin-left: 90%; }
+}
+
+@-moz-keyframes slide {
+	to { margin-left: 90%; }
+}
+
+@-ms-keyframes slide {
+	to { margin-left: 90%; }
+}
+
+@-o-keyframes slide {
+	to { margin-left: 90%; }
+}
+
+@keyframes slide {
+	to { margin-left: 90%; }
+}
+
+
+.muted {
+	color: #CCC;
+}
+.capitalize {
+	text-transform: capitalize;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+.no-border,
+.no-border td {
+	border: 0 !important;
+}
+
+.box-inner {
+	padding: 10px 15px;
+}
+
+.bg-grey {
+	background-color: #eeeeee;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f2f2f2), to(#fafafa));
+	background-image: -webkit-linear-gradient(top, #f2f2f2 0, #fafafa 100%);
+	background-image: -moz-linear-gradient(top, #f2f2f2 0, #fafafa 100%);
+	background-image: -ms-linear-gradient(top, #f2f2f2 0, #fafafa 100%);
+	background-image: -o-linear-gradient(top, #f2f2f2 0, #fafafa 100%);
+	background-image: -linear-gradient(top, #f2f2f2 0, #fafafa 100%);
+}
+
+.mb5 { margin-bottom: 5px; }
+.mb10 { margin-bottom: 10px; }
+.mb15 { margin-bottom: 15px; }
+.mb15 { margin-bottom: 15px; }
+.mb20 { margin-bottom: 20px; }
+.mb30 { margin-bottom: 30px; }
+
+.stamp {
+	min-height: 91px;
+}
+
+.border-only-top {
+	border-width: 1px 0 0 0;
+}
+
+.invoice-preview {
+	th { text-align:center; }
+	table, tr, td { vertical-align: top; border-collapse: collapse; }
+	td { padding: .3em; }
+
+	.maxWidth   { width: 100%; }
+	.halfWidth   { width: 50%; }
+	.twoThirds   { width: 60%; }
+	.oneThirds   { width: 40%; }
+	.oneFourth   { width: 25%; }
+	.threeFourth { width: 75%; }
+
+	.p3   { width: 3%; }
+	.p5   { width: 5%; }
+	.p10 { width: 10%; }
+	.p15 { width: 15%; }
+	.p20 { width: 20%; }
+	.p33 { width: 33% ; }
+
+	.alignLeft   { text-align: left; }
+	.alignCenter { text-align: center; }
+	.alignRight  { text-align: right; }
+
+	.invoiceType, .productList, .sellerBuyerInfo, .invoiceInfo {
+		margin-bottom: 10px;
+	}
+
+	.invoiceType {
+		border-bottom: 2px solid #999;
+	}
+
+	.invoiceType h2 {
+		font-size: 2em;
+		margin: 0px;
+		padding: 0.3em;
+	}
+
+	.productList,
+	.summary { border: 1px solid #000; }
+
+	.productList td,
+	.productList th,
+	.summary td,
+	.summary th { border: 1px solid #000; }
+
+	.dateInfo {
+		border: 2px solid #999;
+	}
+
+	.dateInfo td {
+		border-bottom: 2px solid #999 !important;
+	}
+
+	.invoiceType {
+		background:url(../../../../images/gfx/invoice/grad-right.jpg) right repeat-y;
+	}
+
+	.invoiceNo {
+		font-size: 1.1em;
+		background:url(../../../../images/gfx/invoice/grad-top.jpg) center repeat-x;
+	}
+
+	.signatures {
+		margin-top: 50px;
+	}
+
+	.no-padding {
+		padding: 0;
+	}
+}
+
+.landingPageHeader {
+	padding: 50px;
+	font-size: 350%;
+	letter-spacing: 3px;
+}
+
+.landingPageLeftBlock {
+	background-color: #ddd;
+	min-height: 150px;
+	padding: 20px;
+	margin-bottom: 20px;
+}
+
+.landingPageRightBlock {
+	background-color: #ddd;
+	min-height: 150px;
+	padding: 50px;
+	margin-bottom: 20px;
+}

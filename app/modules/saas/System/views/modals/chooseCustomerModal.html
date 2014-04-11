@@ -1,0 +1,16 @@
+<!-- start choose customer modal -->
+<div class="row-fluid">
+	<div class="modal-header">
+		<h3>{{t('Select_customer_to_login')}}</h3>
+	</div>
+	<div class="modal-body">
+		<ul class="nav nav-pills nav-stacked">
+		  <li ng-repeat="customer in customers" ng-class="{'active': selected == customer}"><a href ng-click="setCustomer(customer)">{{customer.name}}</a></li>
+		</ul>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn" ng-click="cancel()">{{t('Cancel')}}</button>
+		<button type="button" class="btn btn-primary" ng-click="selectCustomer()">{{t('Select')}}</button>
+	</div>
+</div>
+<!-- end choose customer modal -->

@@ -1,0 +1,39 @@
+<div class="modal hide modal-large" id="subscriptionDetailModal">
+    <div class="modal-header">
+        <h3>{{saasBundleParams.saasBundle.name}}</h3>
+    </div>
+    <div class="modal-body">
+        <dl class="dl-horizontal dt-padding">
+            <dt>{{t('Description')}}:</dt>
+            <dd class="well" ng-bind-html-unsafe="saasBundleParams.saasBundle.description"></dd>
+
+            <dt>{{t('Limitations')}}:</dt>
+            <dd class="well">
+                <ul>
+                    <li>
+                        <span ng-show="saasBundleParams.saasBundle.maxUsers > 0">{{t('Maximum')}} {{saasBundleParams.saasBundle.maxUsers}}</span>
+                        <span ng-show="saasBundleParams.saasBundle.maxUsers > 2">{{t('users_c')}}</span>
+                        <span ng-show="saasBundleParams.saasBundle.maxUsers == 1">{{t('user')}}</span>
+                        <span ng-show="saasBundleParams.saasBundle.maxUsers == 0">{{t('Unlimited_users')}}</span>
+                    </li>
+                    <li ng-repeat="contraint in constraintsValues">
+                        {{contraint.title}}: {{saasBundleParams.saasBundle.constraints[contraint.key].constraintValue}}
+                    </li>
+                </ul>
+            </dd>
+
+            <dt>{{t('Packages')}}:</dt>
+            <dd class="well">
+                <div ng-repeat="featureObj in saasBundleParams.saasBundle.features">
+                    <h5>{{featureObj.appName}}</h5>
+                    <ul>
+                        <li ng-repeat="feature in featureObj.features">{{feature.featureName}}</li>
+                    </ul>
+                </div>
+            </dd>
+        </dl>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn" data-dismiss="modal">{{t('Close')}}</button>
+    </div>
+</div>

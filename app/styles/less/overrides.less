@@ -1,0 +1,50 @@
+// need to override just one or two small stylistic things and don't want to edit the main .less files?  Add those overrides here
+// Add anything custom here -- mixins, variable overrides.
+// by adding things here instead of overriding existing .LESS files, it makes merging changes on product updates easier
+
+.importButton {
+	padding: 10px 0;
+
+	.inner {
+		margin-left: 30px
+	}
+	.btn.btn-ribbon {
+		padding: 0 15px;
+		height: 30px;
+		line-height: 30px;
+		text-transform: uppercase;
+	}
+}
+
+body .ng-table th {
+	text-align: left;
+}
+
+.minified #left-panel .importButton {
+	display: none;
+}
+
+
+.gritter-item .gritter-close {
+	left: auto;
+	right: 3px;
+}
+
+@media (min-width: 992px) {
+	.modal-lg .modal-dialog {
+		width: 900px;
+	}
+}
+
+#logo img {
+	width: 160px;
+}
+
+#login .login-desc-box-l {
+	min-height: 350px;
+	width: 45%;
+}
+
+#login .hero {
+	background-position: 250px 130px;
+}

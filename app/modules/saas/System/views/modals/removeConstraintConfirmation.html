@@ -1,0 +1,16 @@
+<!-- start choose customer modal -->
+<div class="row-fluid">
+    <div class="modal-header">
+        <h3>{{t('Delete_constraint')}}: {{constraint.name}}</h3>
+    </div>
+    <div class="modal-body">
+        {{t('Confirm_delete_constraint')}}: 
+        <h2>{{constraint.name}}</h2>
+        <h3>{{constraint.description}}</h3>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn" ng-click="cancel()">{{t('Cancel')}}</button>
+        <button type="button" class="btn btn-primary" ng-click="delete()">{{t('remove')}}</button>
+    </div>
+</div>
+<!-- end choose customer modal -->

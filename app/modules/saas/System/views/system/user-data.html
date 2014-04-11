@@ -1,0 +1,42 @@
+<div ng-controller="HeaderController">
+	<div class="row">
+		<div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+			<h1 class="page-title txt-color-blueDark">
+				<i class="fa fa-wrench fa-fw"></i>
+				{{t('Your_account')}}
+			</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+			<div class="well well-sm well-light">
+				<h3>{{ t('User') }} <small>{{ t('Your_data') }}.</small></h3>
+				<dl class="dl-horizontal">
+					<dt>{{ t('Email') }}</dt><dd>{{ user.email }}</dd>
+					<dt>{{ t('User') }}</dt><dd>{{ user.firstName }} {{ user.lastName }}</dd>
+					<dt ng-if="user.phoneNumber">{{ t('Phone_number') }}</dt><dd ng-if="user.phoneNumber">{{ user.phoneNumber }}</dd>
+					<dt>{{ t('Created_on') }}</dt><dd>{{ user.createdOn | date }}</dd>
+				</dl>
+
+			</div>
+		</div>
+
+		<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+			<div class="well well-sm well-light">
+				<h3>{{ t('Customer') }} <small>{{ t('Basic_information') }}.</small></h3>
+				<dl class="dl-horizontal">
+					<dt>{{ t('Name') }}</dt>
+					<dd>{{ currentCustomer.name }}</dd>
+
+					<dt >{{ t('Profile_type') }}</dt>
+					<dd class="capitalize">{{ t(currentCustomer.customerType) }}</dd>
+
+					<div ng-if="currentCustomer.description">
+						<dt>{{ t('Description') }}</dt>
+						<dd>{{ currentCustomer.description }}</dd>
+					</div>
+				</dl>
+			</div>
+		</div>
+	</div>
+</div>

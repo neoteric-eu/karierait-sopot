@@ -1,0 +1,80 @@
+<div role="main" ng-controller="LoginController" ng-init="init()">
+
+	<!-- MAIN CONTENT -->
+	<div id="content" class="container">
+		<div id="login">
+
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-7 col-lg-8 hidden-xs hidden-sm">
+					<h1 class="txt-color-red login-header-big">Kariera IT Sopot</h1>
+					<div class="clearfix"></div>
+					<div class="hero">
+
+						<div class="pull-left login-desc-box-l ">
+							<h4 class="paragraph-header">Aplikacja demo</h4>
+							<div class="login-app-icons">
+							</div>
+						</div>
+
+						<img src="images/invoice-list-view-mini.png" alt="invoice list" width="400">
+
+					</div>
+
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-5 col-lg-4">
+					<div class="well no-padding">
+						<form class="smart-form client-form" name="loginForm" ng-submit="login()" >
+							<header>
+								Zaloguj się
+							</header>
+							<fieldset>
+
+								<section ng-show="formError">
+									<p class="alert alert-danger" ng-model="formError">
+										<button type="button" class="close" data-dismiss="alert">&times;</button>
+										Błędny dane
+									</p>
+								</section>
+
+								<section>
+									<label class="label">Email</label>
+									<label class="input"> <i class="icon-append fa fa-user"></i>
+										<input type="email" name="email" ng-model="user.email" required>
+										<b class="tooltip tooltip-top-right"><i class="fa fa-user txt-color-teal"></i> Wpisz adres email</b>
+									</label>
+								</section>
+
+								<section>
+									<label class="label">Hasło</label>
+									<label class="input"> <i class="icon-append fa fa-lock"></i>
+										<input type="password" name="password" ng-model="user.password" required>
+										<b class="tooltip tooltip-top-right"><i class="fa fa-lock txt-color-teal"></i> Wpisz hasło</b>
+									</label>
+									<div class="note">
+									</div>
+								</section>
+
+								<!--
+		 						<section>
+									<label class="checkbox">
+										<input type="checkbox" name="remember" checked="">
+										<i></i>Stay signed in
+									</label>
+								</section> -->
+							</fieldset>
+							<footer>
+								<button type="submit" class="btn btn-primary" ng-disabled="!loginForm.$valid">
+									Zaloguj się
+								</button>
+
+								<button ng-click="loginAsAdmin()" type="button" class="btn btn-default"><i class="icon-off icon-white"></i> Zaloguj się jako administrator</button>
+							</footer>
+						</form>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>

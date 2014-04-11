@@ -1,0 +1,29 @@
+<div ng-controller="RegisterController" ng-init="makeActivation()"  class="container-fluid">
+    <div class="row-fluid">
+        <div class="login-box relative">
+            <h2>{{t('Accout_activation')}}</h2>
+            <hr>
+            <div class="row-fluid">
+                <div class="span10 offset1">
+                    <div class="alert alert-error" ng-show="showError">
+                        {{t('Activation_link_is_invalid_msg')}}
+                        <hr>
+                        <a href="#/login" class="btn">{{t('Comeback')}}</a>
+                    </div>
+
+                    <div class="alert alert-error" ng-show="activationError">
+                       {{t('Activation_error_msg')}}
+                       <hr>
+                       <a href="#/login" class="btn">{{t('Login')}}</a>
+                    </div>
+
+                    <div class="alert alert-success" ng-show="activationSuccess">
+                        {{t('Activation_success_msg')}}
+                        <hr>
+                        <a href="#/login" class="btn btn-primary">{{t('Login')}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

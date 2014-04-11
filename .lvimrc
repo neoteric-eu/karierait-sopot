@@ -1,0 +1,4 @@
+set tabstop=4     " tab spacing (settings below are just to unify it)
+set softtabstop=4 " unify
+set shiftwidth=4  " unify
+set noexpandtab

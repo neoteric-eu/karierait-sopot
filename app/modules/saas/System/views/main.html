@@ -1,0 +1,65 @@
+<aside id="left-panel">
+	<!-- User info -->
+	<div class="login-info" ng-controller="HeaderController">
+
+		<span class="user-data"> <!-- User image size is adjusted inside CSS, it should stay as it -->
+			<img src="images/male.png" alt="me" class="offline">
+			{{ user.email }}
+		</span>
+	</div>
+
+	<nav>
+		<ul>
+			<li ng-repeat="item in menu">
+				<a href="#/{{item.href}}" title="{{item.title}}">
+					<i class="{{item.icon}}"></i> <span class="menu-item-parent"> {{item.title}}</span>
+				</a>
+			</li>
+		</ul>
+	</nav>
+	<span class="minifyme"> <i class="fa fa-arrow-circle-left hit"></i> </span>
+</aside>
+
+<div id="main" role="main">
+
+	<div id="ribbon" ng-controller="HeaderController">
+		<span class="ribbon-button-alignment">
+			<span ng-click="refreshRoute()" class="btn btn-ribbon" title="refresh"><i class="fa fa-refresh"></i></span>
+			<span class="hide-menu hidden-lg hidden-md btn btn-ribbon">  <i class="fa fa-bars fa-lg"></i></span>
+		</span>
+
+		<ol class="breadcrumb" class="pull-left">
+
+		</ol>
+		<div class="ribbon-button-alignment pull-right">
+			<ul class="list-inline">
+				<li class="dropdown">
+					<a class="btn btn-ribbon dropdown-toggle" data-toggle="dropdown" href="#">
+						<span class="no-shadow light-color">Neoteric</span>
+						<i class="fa fa-angle-down"></i>
+					</a>
+					<ul class="dropdown-menu">
+						<li><a href ng-click="logout()"><i class="icon-off"></i> Wyloguj się</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div id="content">
+
+		<div ng-if="mainLoaderVisible">
+			<div class="bar">
+				<i class="sphere"></i>
+				<span class="text">Proszę czekać...</span>
+			</div>
+		</div>
+
+		<div ng-hide="mainLoaderVisible">
+
+			<div ng-view></div>
+		</div>
+	</div>
+
+
+</div>
